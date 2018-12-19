@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+    <h1>Sign In</h1>
+    <form action="" method="post" name="form">
+        {{ form.username.label }}: {{ form.username }}<br>
+        {{ form.password.label }}: {{ form.password }}<br><br>
+        {{ form.remember }}Remember Me<br><br>
+        {{ form.hidden }}
+        {% for msg in get_flashed_messages() %}
+            {{ msg }}
+        {% endfor %}<br>
+        {{ form.submit }}
+    </form>
+{% endblock %}
